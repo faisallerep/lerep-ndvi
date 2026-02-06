@@ -45,7 +45,7 @@ function yearlyNDVI(year) {
   var end = ee.Date.fromYMD(year, 10, 31);
 
   var s2 = ee
-    .ImageCollection("COPERNICUS/S2_SR")
+    .ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
     .filterBounds(aoi)
     .filterDate(start, end)
     .filter(ee.Filter.lt("CLOUDY_PIXEL_PERCENTAGE", 20))
@@ -100,3 +100,4 @@ Map.addLayer(
 // ---------------------------------------------
 // End of Script
 // ---------------------------------------------
+
